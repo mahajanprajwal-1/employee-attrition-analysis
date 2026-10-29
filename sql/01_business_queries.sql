@@ -37,6 +37,8 @@ SELECT
 FROM employees
 GROUP BY overtime;
 
+------- OverTime employees leave at 30.5% vs 10.4% ------
+
 ----IncomeBand
 SELECT
   incomeband,
@@ -45,6 +47,30 @@ SELECT
 FROM employees
 GROUP BY incomeband
 ORDER BY attrition_pct DESC;
+
+----- Lowest income quartile leaves at 29.3% ----
+
+
+SELECT
+    incomeband,
+    overtime,
+    COUNT(*) AS headcount,
+    ROUND(AVG(attritionflag::NUMERIC) * 100, 1) AS attrition_pct
+FROM employees
+GROUP BY incomeband, overtime
+ORDER BY incomeband, overtime;
+
+
+
+SELECT
+    jobrole,
+    overtime,
+    COUNT(*) AS headcount,
+    ROUND(AVG(attritionflag::NUMERIC) * 100, 1) AS attrition_pct
+FROM employees
+WHERE jobrole IN ('Sales Representative', 'Laboratory Technician')
+GROUP BY jobrole, overtime
+ORDER BY jobrole, overtime;
 
 
 
