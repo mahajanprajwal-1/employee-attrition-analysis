@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "4d598eb5dda24d8cb40c",
+  "position": {
+    "x": 680,
+    "y": 55,
+    "z": 4,
+    "height": 55,
+    "width": 300,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "hr_dashboard_data"
+                    }
+                  },
+                  "Property": "OverTimeLabel"
+                }
+              },
+              "queryRef": "hr_dashboard_data.OverTimeLabel",
+              "nativeQueryRef": "OverTimeLabel",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

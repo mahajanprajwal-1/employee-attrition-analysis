@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ffce9f020d2348fb801b",
+  "position": {
+    "x": 520.07035293723516,
+    "y": 164.66607480862328,
+    "z": 8,
+    "height": 139.96616358732979,
+    "width": 234.64915660228817,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "hr_dashboard_data"
+                    }
+                  },
+                  "Property": "Attrition %"
+                }
+              },
+              "queryRef": "hr_dashboard_data.Attrition %",
+              "nativeQueryRef": "Attrition %"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Attrition %'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c1a5ac6e28ee95e83640",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "hr_dashboard_data"
+              }
+            },
+            "Property": "Attrition %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

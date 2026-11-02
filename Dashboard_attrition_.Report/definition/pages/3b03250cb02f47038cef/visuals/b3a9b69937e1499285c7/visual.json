@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "b3a9b69937e1499285c7",
+  "position": {
+    "x": 769.81389973031378,
+    "y": 164.66607480862328,
+    "z": 9,
+    "height": 139.96616358732979,
+    "width": 234.64915660228817,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "hr_dashboard_data"
+                    }
+                  },
+                  "Property": "Avg Monthly Income"
+                }
+              },
+              "queryRef": "hr_dashboard_data.Avg Monthly Income",
+              "nativeQueryRef": "Avg Monthly Income"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Monthly Income'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c7e49076116256118980",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "hr_dashboard_data"
+              }
+            },
+            "Property": "Avg Monthly Income"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

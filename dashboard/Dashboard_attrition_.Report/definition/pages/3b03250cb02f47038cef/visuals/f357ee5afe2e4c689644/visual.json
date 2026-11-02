@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "f357ee5afe2e4c689644",
+  "position": {
+    "x": 1019.5574465233924,
+    "y": 164.66607480862328,
+    "z": 10,
+    "height": 139.96616358732979,
+    "width": 236.02137389236003,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "hr_dashboard_data"
+                    }
+                  },
+                  "Property": "Avg Tenure"
+                }
+              },
+              "queryRef": "hr_dashboard_data.Avg Tenure",
+              "nativeQueryRef": "Avg Tenure"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Tenure'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "44483e03db911876d1b5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "hr_dashboard_data"
+              }
+            },
+            "Property": "Avg Tenure"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

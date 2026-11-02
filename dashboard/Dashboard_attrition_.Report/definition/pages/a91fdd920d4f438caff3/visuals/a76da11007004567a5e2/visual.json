@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a76da11007004567a5e2",
+  "position": {
+    "x": 40,
+    "y": 385,
+    "z": 43,
+    "height": 70,
+    "width": 1200,
+    "tabOrder": 43
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Laboratory Technicians on overtime: 50% (n=62)  ->  overtime cap for this role.  Est. ~10 fewer exits at 20%",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "fontWeight": "normal"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

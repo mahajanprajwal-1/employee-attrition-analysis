@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ead455b096fd4b5491ae",
+  "position": {
+    "x": 270.32680614415654,
+    "y": 164.66607480862328,
+    "z": 7,
+    "height": 139.96616358732979,
+    "width": 234.64915660228817,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "hr_dashboard_data"
+                    }
+                  },
+                  "Property": "Employees Left"
+                }
+              },
+              "queryRef": "hr_dashboard_data.Employees Left",
+              "nativeQueryRef": "Employees Left"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Employees Left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a2104b98077ab53199d4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "hr_dashboard_data"
+              }
+            },
+            "Property": "Employees Left"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

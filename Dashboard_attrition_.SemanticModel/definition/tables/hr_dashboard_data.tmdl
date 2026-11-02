@@ -1,0 +1,399 @@
+table hr_dashboard_data
+	lineageTag: 5d29bac3-9e3c-4cad-9e6b-9b92b6e249b0
+
+	measure 'Total Employees' = COUNTROWS(hr_dashboard_data)
+		formatString: 0
+		lineageTag: 200b6ffe-7c8c-4618-8e99-67062d7349a5
+
+	measure 'Employees Left' = SUM(hr_dashboard_data[AttritionFlag])
+		formatString: 0
+		lineageTag: 04f29500-ae71-4b9b-891b-fc6b844532a6
+
+	measure 'Attrition %' = DIVIDE([Employees Left], [Total Employees])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d69c1c9a-57c3-49d0-928c-390f369bc82b
+
+	measure 'Avg Monthly Income' = AVERAGE(hr_dashboard_data[MonthlyIncome])
+		lineageTag: b8ff484d-1ae5-4ddf-b7ca-657dc761ec35
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Tenure' = AVERAGE(hr_dashboard_data[YearsAtCompany])
+		lineageTag: 1505e57b-75e0-4ca9-9b1b-6362e0d6dce0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Company Avg %' = CALCULATE([Attrition %], ALL(hr_dashboard_data))
+		formatString: 0.0%
+		lineageTag: 5f960eec-5e93-48eb-81ae-7162653a196c
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: d2925c1b-eb3a-42b8-b16b-fec47156011d
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attrition
+		dataType: string
+		lineageTag: ab9cc384-8af0-4ceb-88d1-e94cddd69026
+		summarizeBy: none
+		sourceColumn: Attrition
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessTravel
+		dataType: string
+		lineageTag: 4e24a95a-a43b-4cd6-89b5-539311951e94
+		summarizeBy: none
+		sourceColumn: BusinessTravel
+
+		annotation SummarizationSetBy = Automatic
+
+	column DailyRate
+		dataType: int64
+		formatString: 0
+		lineageTag: b4240284-f333-463d-bd9c-c4fd0e8048d1
+		summarizeBy: sum
+		sourceColumn: DailyRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 8749c8dd-9f36-437c-b644-8ea9bff79333
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistanceFromHome
+		dataType: int64
+		formatString: 0
+		lineageTag: 86bb3d65-f084-4ae2-8b5c-ff75e818b052
+		summarizeBy: sum
+		sourceColumn: DistanceFromHome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Education
+		dataType: int64
+		formatString: 0
+		lineageTag: d20518c8-b974-4c7a-8bd7-469f0487891b
+		summarizeBy: sum
+		sourceColumn: Education
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationField
+		dataType: string
+		lineageTag: c45aa92c-2e79-43ac-bfcc-608c96a1598e
+		summarizeBy: none
+		sourceColumn: EducationField
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnvironmentSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: ea8a7409-539e-4ed8-b631-d37e88ac9827
+		summarizeBy: sum
+		sourceColumn: EnvironmentSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 7f6147d4-d7ab-4fd6-9d6e-c9af65602540
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column HourlyRate
+		dataType: int64
+		formatString: 0
+		lineageTag: d66e7d05-155b-4ae3-8f19-b3978fc5e3f1
+		summarizeBy: sum
+		sourceColumn: HourlyRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobInvolvement
+		dataType: int64
+		formatString: 0
+		lineageTag: 86d1756f-3fb2-4451-855f-8538ec602c3d
+		summarizeBy: sum
+		sourceColumn: JobInvolvement
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobLevel
+		dataType: int64
+		formatString: 0
+		lineageTag: ea4d52ce-b205-4478-9830-6270f7612a94
+		summarizeBy: sum
+		sourceColumn: JobLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobRole
+		dataType: string
+		lineageTag: 096e1f6f-a76c-4ab7-9078-cea1c82a1832
+		summarizeBy: none
+		sourceColumn: JobRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: bf72fab3-7db6-48e1-9e23-bd6e3353e61c
+		summarizeBy: sum
+		sourceColumn: JobSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalStatus
+		dataType: string
+		lineageTag: c7c75bb1-be68-4832-ba7f-abde90653115
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyIncome
+		dataType: int64
+		formatString: 0
+		lineageTag: 766004b5-3a31-42d1-b118-98a01264c408
+		summarizeBy: sum
+		sourceColumn: MonthlyIncome
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyRate
+		dataType: int64
+		formatString: 0
+		lineageTag: 2085b110-bd95-4528-b770-60d945ed496b
+		summarizeBy: sum
+		sourceColumn: MonthlyRate
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumCompaniesWorked
+		dataType: int64
+		formatString: 0
+		lineageTag: a3d68d34-fde7-42b5-8450-4cafb1b58bc7
+		summarizeBy: sum
+		sourceColumn: NumCompaniesWorked
+
+		annotation SummarizationSetBy = Automatic
+
+	column OverTime
+		dataType: string
+		lineageTag: bdde6b27-9be0-49a5-ae50-dc2ff136d7eb
+		summarizeBy: none
+		sourceColumn: OverTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column PercentSalaryHike
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bc6ca6f-f54d-4f4c-9b96-c037b58809d3
+		summarizeBy: sum
+		sourceColumn: PercentSalaryHike
+
+		annotation SummarizationSetBy = Automatic
+
+	column PerformanceRating
+		dataType: int64
+		formatString: 0
+		lineageTag: 77fec774-e28a-4f26-a2b7-f06deabf370d
+		summarizeBy: sum
+		sourceColumn: PerformanceRating
+
+		annotation SummarizationSetBy = Automatic
+
+	column RelationshipSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eee5669-bde0-4829-8ef0-d188cc3ea350
+		summarizeBy: sum
+		sourceColumn: RelationshipSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockOptionLevel
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d1b55ab-5073-4285-a70f-8792e1c818c2
+		summarizeBy: sum
+		sourceColumn: StockOptionLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalWorkingYears
+		dataType: int64
+		formatString: 0
+		lineageTag: e16fc54c-6529-4320-82f1-5a61a2c0ab61
+		summarizeBy: sum
+		sourceColumn: TotalWorkingYears
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrainingTimesLastYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 01a9afd8-c0a4-4e72-a6f9-cdc26668eb9d
+		summarizeBy: sum
+		sourceColumn: TrainingTimesLastYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkLifeBalance
+		dataType: int64
+		formatString: 0
+		lineageTag: 28178e1a-764f-43b1-a641-7c2b927a228b
+		summarizeBy: sum
+		sourceColumn: WorkLifeBalance
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsAtCompany
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c3ef7b2-3a8c-4416-a949-816234b19ad3
+		summarizeBy: sum
+		sourceColumn: YearsAtCompany
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsInCurrentRole
+		dataType: int64
+		formatString: 0
+		lineageTag: 52ade79d-25cd-4103-9612-704e4c37aa7c
+		summarizeBy: sum
+		sourceColumn: YearsInCurrentRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsSinceLastPromotion
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b9344fc-5dd2-4000-96f1-ca3a44bf6a84
+		summarizeBy: sum
+		sourceColumn: YearsSinceLastPromotion
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsWithCurrManager
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f64b7a9-18a7-4d6c-a989-7f1322a878f6
+		summarizeBy: sum
+		sourceColumn: YearsWithCurrManager
+
+		annotation SummarizationSetBy = Automatic
+
+	column AttritionFlag
+		dataType: int64
+		formatString: 0
+		lineageTag: a10441f9-3c28-4207-9865-ee5de46c47b5
+		summarizeBy: sum
+		sourceColumn: AttritionFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column TenureBand
+		dataType: string
+		lineageTag: 38ef64f2-85e7-4bf8-afb5-727906dd8d09
+		summarizeBy: none
+		sourceColumn: TenureBand
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgeBand
+		dataType: string
+		lineageTag: c06c13ba-bbd0-4b90-be48-de191feb6557
+		summarizeBy: none
+		sourceColumn: AgeBand
+
+		annotation SummarizationSetBy = Automatic
+
+	column IncomeBand
+		dataType: string
+		lineageTag: a11e0a31-48f6-47e0-951f-02fd05cd872f
+		summarizeBy: none
+		sourceColumn: IncomeBand
+
+		annotation SummarizationSetBy = Automatic
+
+	column LongPromotionGap
+		dataType: int64
+		formatString: 0
+		lineageTag: e2b9c54c-a826-422c-8515-a110976e8024
+		summarizeBy: sum
+		sourceColumn: LongPromotionGap
+
+		annotation SummarizationSetBy = Automatic
+
+	column OverTimeLabel
+		dataType: string
+		lineageTag: 63124d0e-3e46-40ed-960d-ef67f6e9804c
+		summarizeBy: none
+		sourceColumn: OverTimeLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 6e0797fb-b7d0-48e4-8790-5c817d7202c1
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column IncomeOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f062d788-7a43-4c2a-8cdd-50a1163b5adb
+		summarizeBy: none
+		sourceColumn: IncomeOrder
+
+	column TenureOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 814dfb74-a9ae-4caa-9e85-76efce73fa9e
+		summarizeBy: none
+		sourceColumn: TenureOrder
+
+	column AgeOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ebb28692-83e6-44c0-8a95-4d9fd090a6e7
+		summarizeBy: none
+		sourceColumn: AgeOrder
+
+	partition hr_dashboard_data = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("E:\SQL_Projects\employee-attrition-analysis\data\hr_dashboard_data.csv"),[Delimiter=",", Columns=38, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Age", Int64.Type}, {"Attrition", type text}, {"BusinessTravel", type text}, {"DailyRate", Int64.Type}, {"Department", type text}, {"DistanceFromHome", Int64.Type}, {"Education", Int64.Type}, {"EducationField", type text}, {"EnvironmentSatisfaction", Int64.Type}, {"Gender", type text}, {"HourlyRate", Int64.Type}, {"JobInvolvement", Int64.Type}, {"JobLevel", Int64.Type}, {"JobRole", type text}, {"JobSatisfaction", Int64.Type}, {"MaritalStatus", type text}, {"MonthlyIncome", Int64.Type}, {"MonthlyRate", Int64.Type}, {"NumCompaniesWorked", Int64.Type}, {"OverTime", type text}, {"PercentSalaryHike", Int64.Type}, {"PerformanceRating", Int64.Type}, {"RelationshipSatisfaction", Int64.Type}, {"StockOptionLevel", Int64.Type}, {"TotalWorkingYears", Int64.Type}, {"TrainingTimesLastYear", Int64.Type}, {"WorkLifeBalance", Int64.Type}, {"YearsAtCompany", Int64.Type}, {"YearsInCurrentRole", Int64.Type}, {"YearsSinceLastPromotion", Int64.Type}, {"YearsWithCurrManager", Int64.Type}, {"AttritionFlag", Int64.Type}, {"TenureBand", type text}, {"AgeBand", type text}, {"IncomeBand", type text}, {"LongPromotionGap", Int64.Type}, {"OverTimeLabel", type text}, {"Status", type text}}),
+				    #"Added IncomeOrder" = Table.AddColumn(#"Changed Type", "IncomeOrder", each if [IncomeBand] = "Low" then 1 else if [IncomeBand] = "Lower-Mid" then 2 else if [IncomeBand] = "Upper-Mid" then 3 else if [IncomeBand] = "High" then 4 else null, Int64.Type),
+				    #"Added TenureOrder" = Table.AddColumn(#"Added IncomeOrder", "TenureOrder", each if [TenureBand] = "0-2 yrs" then 1 else if [TenureBand] = "3-5 yrs" then 2 else if [TenureBand] = "6-10 yrs" then 3 else if [TenureBand] = "10+ yrs" then 4 else null, Int64.Type),
+				    #"Added AgeOrder" = Table.AddColumn(#"Added TenureOrder", "AgeOrder", each if [AgeBand] = "18-25" then 1 else if [AgeBand] = "26-35" then 2 else if [AgeBand] = "36-45" then 3 else if [AgeBand] = "46-60" then 4 else null, Int64.Type)
+				in
+				    #"Added AgeOrder"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

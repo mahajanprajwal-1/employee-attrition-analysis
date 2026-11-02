@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard_attrition_"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8293b421-84f3-4ca2-90f7-ead182bb9a60"
+  }
+}
